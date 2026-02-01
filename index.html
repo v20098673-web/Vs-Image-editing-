@@ -2,55 +2,59 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Image Editor Ultimate</title>
+<title>AI Image Editor</title>
 <link rel="stylesheet" href="style.css">
 <link rel="manifest" href="manifest.json">
 </head>
 <body>
-
 <header>
-  <h1>🖼️ Image Editor Ultimate</h1>
-  <input type="file" id="upload" accept="image/*">
+<h1>🖼️ AI Image Editor</h1>
+<input type="file" id="upload" accept="image/*">
 </header>
-
 <main>
-  <canvas id="canvas"></canvas>
+<canvas id="canvas"></canvas>
+<aside>
+<h3>Adjust</h3>
+<label>Brightness</label>
+<input type="range" id="brightness" min="0" max="200" value="100">
+<label>Contrast</label>
+<input type="range" id="contrast" min="0" max="200" value="100">
+<label>Grayscale</label>
+<input type="range" id="grayscale" min="0" max="100" value="0">
 
-  <aside>
-    <h3>Filters</h3>
-    <input type="range" id="brightness" min="0" max="200" value="100">
-    <input type="range" id="contrast" min="0" max="200" value="100">
-    <input type="range" id="grayscale" min="0" max="100" value="0">
+<h3>Transform</h3>
+<button onclick="rotate()">Rotate</button>
+<button onclick="flip()">Flip</button>
+<button onclick="crop()">Crop</button>
 
-    <h3>Transform</h3>
-    <button onclick="rotate()">Rotate</button>
-    <button onclick="flip()">Flip</button>
-    <button onclick="crop()">Crop</button>
+<h3>Text</h3>
+<input id="textInput" placeholder="Enter text">
+<button onclick="addText()">Add Text</button>
 
-    <h3>Text</h3>
-    <input id="textInput" placeholder="Enter text">
-    <button onclick="addText()">Add Text</button>
+<h3>Stickers</h3>
+<button onclick="addSticker('😎')">😎</button>
+<button onclick="addSticker('🔥')">🔥</button>
+<button onclick="addSticker('❤️')">❤️</button>
 
-    <h3>Stickers</h3>
-    <button onclick="addSticker('😎')">😎</button>
-    <button onclick="addSticker('🔥')">🔥</button>
-    <button onclick="addSticker('❤️')">❤️</button>
+<h3>AI Tools</h3>
+<button onclick="aiEnhance()">✨ AI Auto Enhance</button>
+<button onclick="aiSmartFilter()">🎨 Smart Filter</button>
+<button onclick="aiFocus()">📸 Portrait Focus</button>
+<button onclick="removeBgAI()">🧠 Remove Background</button>
+<button onclick="aiUpscale()">🔍 AI Upscale</button>
 
-    <h3>AI Tools</h3>
-    <button onclick="removeBg()">Remove Background</button>
+<h3>History</h3>
+<button onclick="undo()">Undo</button>
+<button onclick="redo()">Redo</button>
 
-    <h3>History</h3>
-    <button onclick="undo()">Undo</button>
-    <button onclick="redo()">Redo</button>
-
-    <button class="download" onclick="download()">Download</button>
-  </aside>
+<button class="download" onclick="download()">Download</button>
+</aside>
 </main>
 
 <script src="script.js"></script>
 <script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js');
+if('serviceWorker' in navigator){
+navigator.serviceWorker.register('service-worker.js');
 }
 </script>
 </body>
