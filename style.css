@@ -1,78 +1,102 @@
-/* MAIN EDITOR LAYOUT */
-.editor-container {
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 60px);
-  overflow-y: auto;
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-/* IMAGE */
-.image-wrapper {
-  background: #000;
+body {
+  margin: 0;
+  background: #f7f7fb;
+}
+
+/* TOP BAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+}
+
+.logo {
+  color: #7b3fe4;
+}
+
+.login {
+  background: #7b3fe4;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+}
+
+/* LANDING */
+.hero {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.hero h2 {
+  font-size: 42px;
+}
+
+.hero p {
+  max-width: 500px;
+  margin: 15px auto;
+  color: #555;
+}
+
+.upload-btn {
+  display: inline-block;
+  margin-top: 25px;
+  background: #7b3fe4;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* EDITOR */
+.hidden {
+  display: none;
+}
+
+.editor-top {
+  background: #121a36;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.editor-layout {
+  display: flex;
+  height: calc(100vh - 50px);
+}
+
+.canvas-area {
+  flex: 3;
+  background: #eee;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
 }
 
 canvas {
   max-width: 100%;
-  height: auto;
 }
 
-/* CONTROLS BELOW IMAGE */
-.controls-wrapper {
-  background: #10183a;
-  padding: 12px;
+.tools {
+  flex: 1;
+  background: #ffffff;
+  padding: 15px;
+  border-left: 1px solid #ddd;
 }
 
-/* CONTROLS UI */
-.controls-wrapper h3 {
-  margin-top: 15px;
-  font-size: 16px;
-}
-
-.controls-wrapper label {
-  font-size: 14px;
-}
-
-.controls-wrapper input,
-.controls-wrapper button {
+.tools button {
   width: 100%;
-  margin: 6px 0;
+  margin-top: 15px;
   padding: 10px;
-  border-radius: 6px;
+  background: #7b3fe4;
+  color: white;
   border: none;
-}
-
-/* BUTTON STYLING */
-button {
-  background: #18e0ff;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #0fc1da;
-}
-
-.download {
-  background: #00ff9d;
-  font-weight: bold;
-}
-
-/* DESKTOP VIEW */
-@media (min-width: 900px) {
-  .editor-container {
-    flex-direction: row;
-  }
-
-  .image-wrapper {
-    flex: 3;
-  }
-
-  .controls-wrapper {
-    flex: 1.5;
-    max-height: 100%;
-    overflow-y: auto;
-  }
+  border-radius: 8px;
 }
