@@ -1,2 +1,11 @@
-# Vs-Image-editing-
-A lightweight, fast, and responsive image editing web application built using HTML, CSS, and Vanilla JavaScript. This project allows users to upload images, apply real-time filters, and download the edited image — all directly in the browser without any external libraries.
+# Image Editor Web App
+
+A simple image editor built with HTML, CSS, and JavaScript.
+
+## Features
+- Upload image
+- Real-time filters
+- Download edited image
+
+## Run
+Open index.html in browser.
