@@ -11,44 +11,51 @@
 <h1>🖼️ AI Image Editor</h1>
 <input type="file" id="upload" accept="image/*">
 </header>
-<main>
-<canvas id="canvas"></canvas>
-<aside>
-<h3>Adjust</h3>
-<label>Brightness</label>
-<input type="range" id="brightness" min="0" max="200" value="100">
-<label>Contrast</label>
-<input type="range" id="contrast" min="0" max="200" value="100">
-<label>Grayscale</label>
-<input type="range" id="grayscale" min="0" max="100" value="0">
+<main class="editor-container">
 
-<h3>Transform</h3>
-<button onclick="rotate()">Rotate</button>
-<button onclick="flip()">Flip</button>
-<button onclick="crop()">Crop</button>
+  <!-- Image Area -->
+  <div class="image-wrapper">
+    <canvas id="canvas"></canvas>
+  </div>
 
-<h3>Text</h3>
-<input id="textInput" placeholder="Enter text">
-<button onclick="addText()">Add Text</button>
+  <!-- Editing Controls BELOW image -->
+  <div class="controls-wrapper">
 
-<h3>Stickers</h3>
-<button onclick="addSticker('😎')">😎</button>
-<button onclick="addSticker('🔥')">🔥</button>
-<button onclick="addSticker('❤️')">❤️</button>
+    <h3>Adjust</h3>
+    <label>Brightness</label>
+    <input type="range" id="brightness" min="0" max="200" value="100">
 
-<h3>AI Tools</h3>
-<button onclick="aiEnhance()">✨ AI Auto Enhance</button>
-<button onclick="aiSmartFilter()">🎨 Smart Filter</button>
-<button onclick="aiFocus()">📸 Portrait Focus</button>
-<button onclick="removeBgAI()">🧠 Remove Background</button>
-<button onclick="aiUpscale()">🔍 AI Upscale</button>
+    <label>Contrast</label>
+    <input type="range" id="contrast" min="0" max="200" value="100">
 
-<h3>History</h3>
-<button onclick="undo()">Undo</button>
-<button onclick="redo()">Redo</button>
+    <label>Grayscale</label>
+    <input type="range" id="grayscale" min="0" max="100" value="0">
 
-<button class="download" onclick="download()">Download</button>
-</aside>
+    <h3>Transform</h3>
+    <button onclick="rotate()">Rotate</button>
+    <button onclick="flip()">Flip</button>
+    <button onclick="crop()">Crop</button>
+
+    <h3>Text & Stickers</h3>
+    <input id="textInput" placeholder="Enter text">
+    <button onclick="addText()">Add Text</button>
+
+    <button onclick="addSticker('😎')">😎 Sticker</button>
+    <button onclick="addSticker('🔥')">🔥 Sticker</button>
+
+    <h3>AI Tools</h3>
+    <button onclick="aiEnhance()">✨ AI Enhance</button>
+    <button onclick="aiSmartFilter()">🎨 Smart Filter</button>
+    <button onclick="aiFocus()">📸 Portrait Focus</button>
+    <button onclick="removeBgAI()">🧠 Remove BG</button>
+
+    <h3>History</h3>
+    <button onclick="undo()">Undo</button>
+    <button onclick="redo()">Redo</button>
+
+    <button class="download" onclick="download()">⬇ Download</button>
+
+  </div>
 </main>
 
 <script src="script.js"></script>
