@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<!-- LANDING PAGE -->
+<!-- LANDING -->
 <section id="landing">
   <header class="topbar">
     <h1 class="logo">AI Image Editor</h1>
@@ -16,46 +16,52 @@
 
   <div class="hero">
     <h2>Free Online Photo Editor</h2>
-    <p>Upload, edit, and download images instantly</p>
+    <p>Upload any size image, edit with AI, and download</p>
 
-    <!-- BUTTON (JS WILL TRIGGER FILE INPUT) -->
+    <!-- JS-triggered upload (reliable on mobile) -->
     <button class="upload-btn" id="uploadBtn">⬆ Upload your image</button>
-
-    <!-- REAL FILE INPUT (HIDDEN) -->
     <input type="file" id="upload" accept="image/*" hidden>
   </div>
 </section>
 
 <!-- EDITOR -->
 <section id="editor" class="hidden">
-
   <header class="editor-top">
     <span>AI Image Editor</span>
     <button onclick="resetEditor()">New Image</button>
   </header>
 
   <main class="editor-container">
-
     <!-- IMAGE -->
     <div class="image-wrapper">
       <canvas id="canvas"></canvas>
     </div>
 
-    <!-- TOOLBAR BELOW IMAGE -->
+    <!-- TOOLBAR -->
     <div class="toolbar">
-
-      <!-- FILTERS -->
+      <!-- FILTERS: each has its own button -->
       <div class="filters">
+        <!-- BASIC -->
         <button onclick="applyFilter('normal')">Normal</button>
-        <button onclick="applyFilter('vintage')">Vintage</button>
         <button onclick="applyFilter('bw')">B&W</button>
+        <button onclick="applyFilter('vintage')">Vintage</button>
+        <button onclick="applyFilter('bright')">Bright</button>
+
+        <!-- COLOR -->
         <button onclick="applyFilter('warm')">Warm</button>
         <button onclick="applyFilter('cool')">Cool</button>
         <button onclick="applyFilter('dramatic')">Dramatic</button>
-        <button onclick="applyFilter('bright')">Bright</button>
+
+        <!-- AI -->
+        <button onclick="aiAutoEnhance()">✨ Auto Enhance</button>
+        <button onclick="aiSmartFilter('portrait')">👤 Portrait</button>
+        <button onclick="aiSmartFilter('landscape')">🌄 Landscape</button>
+        <button onclick="aiSmartFilter('night')">🌙 Night</button>
+        <button onclick="aiBlurBG()">📸 Blur BG</button>
+        <button onclick="removeBgAI()">🧠 Remove BG</button>
       </div>
 
-      <!-- SLIDERS -->
+      <!-- MANUAL SLIDERS -->
       <div class="tool">
         <label>Brightness</label>
         <input type="range" id="brightness" min="0" max="200" value="100">
@@ -74,7 +80,6 @@
       <button onclick="rotate()">Rotate</button>
       <button onclick="flip()">Flip</button>
       <button class="download" onclick="download()">Download</button>
-
     </div>
   </main>
 </section>
