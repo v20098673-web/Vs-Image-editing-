@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const upload = document.getElementById("upload");
+  const uploadBtn = document.getElementById("uploadBtn");
   const landing = document.getElementById("landing");
   const editor = document.getElementById("editor");
   const canvas = document.getElementById("canvas");
@@ -14,6 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
   let rotation = 0;
   let flipX = 1;
 
+  /* FORCE FILE PICKER OPEN */
+  uploadBtn.addEventListener("click", () => {
+    upload.click();
+  });
+
+  /* FILE SELECTED */
   upload.addEventListener("change", e => {
     if (!e.target.files[0]) return;
 
