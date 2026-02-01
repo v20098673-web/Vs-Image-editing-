@@ -18,10 +18,11 @@
     <h2>Free Online Photo Editor</h2>
     <p>Upload, edit, and download images instantly</p>
 
-    <label class="upload-btn">
-      ⬆ Upload your image
-      <input type="file" id="upload" accept="image/*">
-    </label>
+    <!-- BUTTON (JS WILL TRIGGER FILE INPUT) -->
+    <button class="upload-btn" id="uploadBtn">⬆ Upload your image</button>
+
+    <!-- REAL FILE INPUT (HIDDEN) -->
+    <input type="file" id="upload" accept="image/*" hidden>
   </div>
 </section>
 
@@ -40,9 +41,10 @@
       <canvas id="canvas"></canvas>
     </div>
 
-    <!-- FILTER BAR -->
+    <!-- TOOLBAR BELOW IMAGE -->
     <div class="toolbar">
 
+      <!-- FILTERS -->
       <div class="filters">
         <button onclick="applyFilter('normal')">Normal</button>
         <button onclick="applyFilter('vintage')">Vintage</button>
@@ -53,6 +55,7 @@
         <button onclick="applyFilter('bright')">Bright</button>
       </div>
 
+      <!-- SLIDERS -->
       <div class="tool">
         <label>Brightness</label>
         <input type="range" id="brightness" min="0" max="200" value="100">
@@ -73,7 +76,6 @@
       <button class="download" onclick="download()">Download</button>
 
     </div>
-
   </main>
 </section>
 
