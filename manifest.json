@@ -1,8 +1,9 @@
 {
-"name":"AI Image Editor",
-"short_name":"Editor",
-"start_url":"index.html",
-"display":"standalone",
-"background_color":"#0b1020",
-"theme_color":"#18e0ff"
+  "name": "AI Image Editor",
+  "short_name": "Editor",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7b3fe4"
 }
