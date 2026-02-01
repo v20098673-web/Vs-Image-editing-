@@ -1,16 +1,67 @@
-/* EDITOR LAYOUT */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f4f8;
+}
+
+/* HIDE */
+.hidden {
+  display: none;
+}
+
+/* LANDING */
+.topbar {
+  padding: 15px;
+  text-align: center;
+}
+
+.hero {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.upload-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #7b3fe4;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-btn input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* EDITOR */
+.editor-top {
+  background: #121a36;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .editor-container {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 50px);
 }
 
 /* IMAGE */
 .image-wrapper {
-  background: #000;
+  background: black;
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 10px;
 }
 
@@ -20,7 +71,7 @@ canvas {
   background: black;
 }
 
-/* BOTTOM TOOLBAR */
+/* TOOLBAR */
 .toolbar {
   display: flex;
   align-items: center;
@@ -31,7 +82,7 @@ canvas {
   white-space: nowrap;
 }
 
-/* FILTER BUTTONS */
+/* FILTERS */
 .filters {
   display: flex;
   gap: 8px;
@@ -42,10 +93,8 @@ canvas {
   color: white;
   border-radius: 20px;
   padding: 8px 14px;
-  font-size: 13px;
   border: none;
   cursor: pointer;
-  white-space: nowrap;
 }
 
 .filters button:hover {
@@ -53,7 +102,7 @@ canvas {
   color: black;
 }
 
-/* TOOL GROUP */
+/* TOOLS */
 .tool {
   min-width: 120px;
   color: white;
@@ -63,7 +112,6 @@ canvas {
   font-size: 12px;
 }
 
-/* INPUTS & BUTTONS */
 .toolbar input,
 .toolbar button {
   padding: 8px;
@@ -74,10 +122,6 @@ canvas {
 .toolbar button {
   background: #18e0ff;
   cursor: pointer;
-}
-
-.toolbar button:hover {
-  background: #0fc1da;
 }
 
 .download {
