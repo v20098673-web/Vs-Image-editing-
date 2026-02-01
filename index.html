@@ -2,67 +2,57 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AI Image Editor</title>
+<title>AI Photo Editor</title>
 <link rel="stylesheet" href="style.css">
-<link rel="manifest" href="manifest.json">
 </head>
 <body>
-<header>
-<h1>🖼️ AI Image Editor</h1>
-<input type="file" id="upload" accept="image/*">
-</header>
-<main class="editor-container">
 
-  <!-- Image Area -->
-  <div class="image-wrapper">
-    <canvas id="canvas"></canvas>
+<!-- LANDING PAGE -->
+<section id="landing">
+  <header class="topbar">
+    <h1 class="logo">AI Image Editor</h1>
+    <button class="login">Log in</button>
+  </header>
+
+  <div class="hero">
+    <h2>Free Online Photo Editor</h2>
+    <p>
+      Upload, edit, and enhance your photos instantly —  
+      all in one simple, powerful editor.
+    </p>
+
+    <label class="upload-btn">
+      ⬆ Upload your image
+      <input type="file" id="upload" hidden accept="image/*">
+    </label>
   </div>
+</section>
 
-  <!-- Editing Controls BELOW image -->
-  <div class="controls-wrapper">
+<!-- EDITOR PAGE -->
+<section id="editor" class="hidden">
+  <header class="editor-top">
+    <span>AI Image Editor</span>
+    <button onclick="resetEditor()">New Image</button>
+  </header>
 
-    <h3>Adjust</h3>
-    <label>Brightness</label>
-    <input type="range" id="brightness" min="0" max="200" value="100">
+  <main class="editor-layout">
+    <div class="canvas-area">
+      <canvas id="canvas"></canvas>
+    </div>
 
-    <label>Contrast</label>
-    <input type="range" id="contrast" min="0" max="200" value="100">
+    <div class="tools">
+      <h3>Adjust</h3>
+      <label>Brightness</label>
+      <input type="range" id="brightness" min="0" max="200" value="100">
 
-    <label>Grayscale</label>
-    <input type="range" id="grayscale" min="0" max="100" value="0">
+      <label>Contrast</label>
+      <input type="range" id="contrast" min="0" max="200" value="100">
 
-    <h3>Transform</h3>
-    <button onclick="rotate()">Rotate</button>
-    <button onclick="flip()">Flip</button>
-    <button onclick="crop()">Crop</button>
-
-    <h3>Text & Stickers</h3>
-    <input id="textInput" placeholder="Enter text">
-    <button onclick="addText()">Add Text</button>
-
-    <button onclick="addSticker('😎')">😎 Sticker</button>
-    <button onclick="addSticker('🔥')">🔥 Sticker</button>
-
-    <h3>AI Tools</h3>
-    <button onclick="aiEnhance()">✨ AI Enhance</button>
-    <button onclick="aiSmartFilter()">🎨 Smart Filter</button>
-    <button onclick="aiFocus()">📸 Portrait Focus</button>
-    <button onclick="removeBgAI()">🧠 Remove BG</button>
-
-    <h3>History</h3>
-    <button onclick="undo()">Undo</button>
-    <button onclick="redo()">Redo</button>
-
-    <button class="download" onclick="download()">⬇ Download</button>
-
-  </div>
-</main>
+      <button onclick="download()">Download</button>
+    </div>
+  </main>
+</section>
 
 <script src="script.js"></script>
-<script>
-if('serviceWorker' in navigator){
-navigator.serviceWorker.register('service-worker.js');
-}
-</script>
 </body>
 </html>
