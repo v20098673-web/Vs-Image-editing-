@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AI Photo Editor</title>
-<link rel="stylesheet" href="style.css">
+<title>AI Image Editor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./style.css">
+<link rel="manifest" href="./manifest.json">
 </head>
 <body>
 
@@ -17,8 +19,8 @@
   <div class="hero">
     <h2>Free Online Photo Editor</h2>
     <p>
-      Upload, edit, and enhance your photos instantly —  
-      all in one simple, powerful editor.
+      Upload, edit, and download images instantly  
+      with a simple Canva-style editor.
     </p>
 
     <label class="upload-btn">
@@ -28,19 +30,21 @@
   </div>
 </section>
 
-<!-- EDITOR PAGE -->
+<!-- EDITOR -->
 <section id="editor" class="hidden">
   <header class="editor-top">
     <span>AI Image Editor</span>
     <button onclick="resetEditor()">New Image</button>
   </header>
 
-  <main class="editor-layout">
-    <div class="canvas-area">
+  <main class="editor-container">
+
+    <div class="image-wrapper">
       <canvas id="canvas"></canvas>
     </div>
 
-    <div class="tools">
+    <div class="controls-wrapper">
+
       <h3>Adjust</h3>
       <label>Brightness</label>
       <input type="range" id="brightness" min="0" max="200" value="100">
@@ -48,11 +52,26 @@
       <label>Contrast</label>
       <input type="range" id="contrast" min="0" max="200" value="100">
 
-      <button onclick="download()">Download</button>
+      <label>Grayscale</label>
+      <input type="range" id="grayscale" min="0" max="100" value="0">
+
+      <h3>Transform</h3>
+      <button onclick="rotate()">Rotate</button>
+      <button onclick="flip()">Flip</button>
+
+      <h3>Text</h3>
+      <input id="textInput" placeholder="Enter text">
+      <button onclick="addText()">Add Text</button>
+
+      <h3>AI Tools</h3>
+      <button onclick="aiEnhance()">✨ AI Enhance</button>
+
+      <button class="download" onclick="download()">⬇ Download</button>
     </div>
+
   </main>
 </section>
 
-<script src="script.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>
