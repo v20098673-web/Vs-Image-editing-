@@ -1,68 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Professional Image Editor</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Image Editor Ultimate</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
 </head>
 <body>
 
-<div class="app">
-    <header>
-        <h1>🖼️ Image Editor Pro</h1>
-        <input type="file" id="upload" accept="image/*">
-    </header>
+<header>
+  <h1>🖼️ Image Editor Ultimate</h1>
+  <input type="file" id="upload" accept="image/*">
+</header>
 
-    <main>
-        <div class="image-area">
-            <img id="preview">
-        </div>
+<main>
+  <canvas id="canvas"></canvas>
 
-        <aside class="panel">
-            <h3>Adjust</h3>
+  <aside>
+    <h3>Filters</h3>
+    <input type="range" id="brightness" min="0" max="200" value="100">
+    <input type="range" id="contrast" min="0" max="200" value="100">
+    <input type="range" id="grayscale" min="0" max="100" value="0">
 
-            <label>Brightness</label>
-            <input type="range" id="brightness" min="0" max="200" value="100">
+    <h3>Transform</h3>
+    <button onclick="rotate()">Rotate</button>
+    <button onclick="flip()">Flip</button>
+    <button onclick="crop()">Crop</button>
 
-            <label>Contrast</label>
-            <input type="range" id="contrast" min="0" max="200" value="100">
+    <h3>Text</h3>
+    <input id="textInput" placeholder="Enter text">
+    <button onclick="addText()">Add Text</button>
 
-            <label>Saturation</label>
-            <input type="range" id="saturate" min="0" max="200" value="100">
+    <h3>Stickers</h3>
+    <button onclick="addSticker('😎')">😎</button>
+    <button onclick="addSticker('🔥')">🔥</button>
+    <button onclick="addSticker('❤️')">❤️</button>
 
-            <label>Blur</label>
-            <input type="range" id="blur" min="0" max="10" value="0">
+    <h3>AI Tools</h3>
+    <button onclick="removeBg()">Remove Background</button>
 
-            <label>Grayscale</label>
-            <input type="range" id="grayscale" min="0" max="100" value="0">
+    <h3>History</h3>
+    <button onclick="undo()">Undo</button>
+    <button onclick="redo()">Redo</button>
 
-            <label>Sepia</label>
-            <input type="range" id="sepia" min="0" max="100" value="0">
-
-            <h3>Transform</h3>
-            <div class="btn-group">
-                <button onclick="rotate(-90)">⟲ Rotate</button>
-                <button onclick="rotate(90)">⟳ Rotate</button>
-                <button onclick="flipX()">⇋ Flip X</button>
-                <button onclick="flipY()">⇅ Flip Y</button>
-            </div>
-
-            <h3>Presets</h3>
-            <div class="btn-group">
-                <button onclick="preset('vintage')">Vintage</button>
-                <button onclick="preset('bw')">B&W</button>
-                <button onclick="preset('cool')">Cool</button>
-                <button onclick="preset('warm')">Warm</button>
-            </div>
-
-            <div class="actions">
-                <button class="reset" onclick="resetAll()">Reset</button>
-                <button class="download" onclick="downloadImage()">Download</button>
-            </div>
-        </aside>
-    </main>
-</div>
+    <button class="download" onclick="download()">Download</button>
+  </aside>
+</main>
 
 <script src="script.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+</script>
 </body>
 </html>
