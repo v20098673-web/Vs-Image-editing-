@@ -1,34 +1,9 @@
-body {
-    background: #0a0d1a;
-    font-family: Arial, sans-serif;
-    color: #fff;
-    text-align: center;
-}
-.container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-}
-.editor img {
-    max-width: 100%;
-    margin: 20px 0;
-    border-radius: 10px;
-}
-.controls label {
-    display: block;
-    margin-top: 12px;
-}
-input[type="range"] {
-    width: 100%;
-}
-button {
-    padding: 10px 20px;
-    margin: 10px;
-    background: #18e0ff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-button:hover {
-    background: #0fc1da;
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#0b1020;color:#fff}
+header{padding:10px;background:#121a36;display:flex;justify-content:space-between}
+main{display:flex;height:calc(100vh - 60px)}
+canvas{flex:3;background:#000}
+aside{flex:1;background:#10183a;padding:10px;overflow:auto}
+input,button{width:100%;margin:5px 0}
+button{padding:8px;background:#18e0ff;border:none;border-radius:4px}
+.download{background:#00ff9d}
