@@ -1,81 +1,16 @@
-* {
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  margin: 0;
-  background: #f7f7fb;
-}
-
-/* TOP BAR */
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 25px;
-}
-
-.logo {
-  color: #7b3fe4;
-}
-
-.login {
-  background: #7b3fe4;
-  color: white;
-  border: none;
-  padding: 8px 18px;
-  border-radius: 8px;
-}
-
-/* LANDING */
-.hero {
-  text-align: center;
-  margin-top: 80px;
-}
-
-.hero h2 {
-  font-size: 40px;
-}
-
-.hero p {
-  max-width: 500px;
-  margin: 15px auto;
-  color: #555;
-}
-
-.upload-btn {
-  display: inline-block;
-  margin-top: 25px;
-  background: #7b3fe4;
-  color: white;
-  padding: 15px 30px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-/* EDITOR */
-.hidden {
-  display: none;
-}
-
-.editor-top {
-  background: #121a36;
-  color: white;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-}
-
+/* EDITOR LAYOUT */
 .editor-container {
   display: flex;
   flex-direction: column;
+  height: calc(100vh - 50px);
 }
 
+/* IMAGE */
 .image-wrapper {
   background: #000;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 10px;
 }
 
@@ -85,48 +20,45 @@ canvas {
   background: black;
 }
 
-.controls-wrapper {
+/* BOTTOM TOOLBAR */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
   background: #10183a;
-  padding: 12px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* TOOL GROUP */
+.tool {
+  min-width: 120px;
   color: white;
 }
 
-.controls-wrapper input,
-.controls-wrapper button {
-  width: 100%;
-  margin: 6px 0;
-  padding: 10px;
+.tool label {
+  font-size: 12px;
+}
+
+/* INPUTS & BUTTONS */
+.toolbar input,
+.toolbar button {
+  padding: 8px;
   border-radius: 6px;
   border: none;
 }
 
-button {
+.toolbar button {
   background: #18e0ff;
   cursor: pointer;
 }
 
-button:hover {
+.toolbar button:hover {
   background: #0fc1da;
 }
 
 .download {
   background: #00ff9d;
   font-weight: bold;
-}
-
-/* DESKTOP */
-@media (min-width: 900px) {
-  .editor-container {
-    flex-direction: row;
-    height: calc(100vh - 50px);
-  }
-
-  .image-wrapper {
-    flex: 3;
-  }
-
-  .controls-wrapper {
-    flex: 1.5;
-    overflow-y: auto;
-  }
 }
