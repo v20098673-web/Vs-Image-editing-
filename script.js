@@ -82,4 +82,66 @@ window.resetEditor = () => {
   landing.classList.remove("hidden");
 };
 
+  window.applyFilter = (type) => {
+
+  // Reset first
+  brightness.value = 100;
+  contrast.value = 100;
+  grayscale.value = 0;
+
+  switch (type) {
+    case "normal":
+      break;
+
+    case "vintage":
+      brightness.value = 110;
+      contrast.value = 90;
+      grayscale.value = 10;
+      break;
+
+    case "bw":
+      grayscale.value = 100;
+      contrast.value = 120;
+      break;
+
+    case "warm":
+      brightness.value = 105;
+      contrast.value = 110;
+      break;
+
+    case "cool":
+      brightness.value = 95;
+      contrast.value = 105;
+      break;
+
+    case "dramatic":
+      brightness.value = 90;
+      contrast.value = 140;
+      break;
+
+    case "soft":
+      brightness.value = 115;
+      contrast.value = 85;
+      break;
+
+    case "retro":
+      brightness.value = 105;
+      contrast.value = 95;
+      grayscale.value = 20;
+      break;
+
+    case "cinematic":
+      brightness.value = 90;
+      contrast.value = 130;
+      break;
+
+    case "bright":
+      brightness.value = 130;
+      contrast.value = 120;
+      break;
+  }
+
+  draw(); // redraw canvas
+};
+
 });
