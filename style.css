@@ -1,38 +1,86 @@
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #f4f4f8;
+/* EDITOR LAYOUT */
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 50px);
 }
 
-.hidden {
-  display: none;
-}
-
+/* IMAGE */
 .image-wrapper {
-  background: black;
-  text-align: center;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 canvas {
   width: 100%;
   max-height: 70vh;
+  background: black;
 }
 
+/* BOTTOM TOOLBAR */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: #10183a;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* FILTER BUTTONS */
 .filters {
   display: flex;
   gap: 8px;
-  padding: 10px;
-  overflow-x: auto;
 }
 
 .filters button {
-  padding: 8px 14px;
+  background: #2a2f5a;
+  color: white;
   border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 13px;
   border: none;
-  background: #333;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.filters button:hover {
+  background: #18e0ff;
+  color: black;
+}
+
+/* TOOL GROUP */
+.tool {
+  min-width: 120px;
   color: white;
 }
 
-.controls {
-  padding: 10px;
+.tool label {
+  font-size: 12px;
+}
+
+/* INPUTS & BUTTONS */
+.toolbar input,
+.toolbar button {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+}
+
+.toolbar button {
+  background: #18e0ff;
+  cursor: pointer;
+}
+
+.toolbar button:hover {
+  background: #0fc1da;
+}
+
+.download {
+  background: #00ff9d;
+  font-weight: bold;
 }
