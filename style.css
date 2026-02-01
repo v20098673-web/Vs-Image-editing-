@@ -1,9 +1,78 @@
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial;background:#0b1020;color:#fff}
-header{padding:10px;background:#121a36;display:flex;justify-content:space-between}
-main{display:flex;height:calc(100vh - 60px)}
-canvas{flex:3;background:#000}
-aside{flex:1;background:#10183a;padding:10px;overflow:auto}
-input,button{width:100%;margin:5px 0}
-button{padding:8px;background:#18e0ff;border:none;border-radius:4px}
-.download{background:#00ff9d}
+/* MAIN EDITOR LAYOUT */
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+/* IMAGE */
+.image-wrapper {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* CONTROLS BELOW IMAGE */
+.controls-wrapper {
+  background: #10183a;
+  padding: 12px;
+}
+
+/* CONTROLS UI */
+.controls-wrapper h3 {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.controls-wrapper label {
+  font-size: 14px;
+}
+
+.controls-wrapper input,
+.controls-wrapper button {
+  width: 100%;
+  margin: 6px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* BUTTON STYLING */
+button {
+  background: #18e0ff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0fc1da;
+}
+
+.download {
+  background: #00ff9d;
+  font-weight: bold;
+}
+
+/* DESKTOP VIEW */
+@media (min-width: 900px) {
+  .editor-container {
+    flex-direction: row;
+  }
+
+  .image-wrapper {
+    flex: 3;
+  }
+
+  .controls-wrapper {
+    flex: 1.5;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+}
