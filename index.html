@@ -5,7 +5,6 @@
 <title>AI Image Editor</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="./style.css">
-<link rel="manifest" href="./manifest.json">
 </head>
 <body>
 
@@ -13,24 +12,20 @@
 <section id="landing">
   <header class="topbar">
     <h1 class="logo">AI Image Editor</h1>
-    <button class="login">Log in</button>
   </header>
 
   <div class="hero">
     <h2>Free Online Photo Editor</h2>
-    <p>
-      Upload, edit, and download images instantly  
-      with a simple Canva-style editor.
-    </p>
+    <p>Upload, edit, and download images instantly</p>
 
     <label class="upload-btn">
       ⬆ Upload your image
-      <input type="file" id="upload" hidden accept="image/*">
+      <input type="file" id="upload" accept="image/*">
     </label>
   </div>
 </section>
 
-<!-- EDITOR (HIDDEN INITIALLY) -->
+<!-- EDITOR -->
 <section id="editor" class="hidden">
 
   <header class="editor-top">
@@ -45,45 +40,37 @@
       <canvas id="canvas"></canvas>
     </div>
 
-    <!-- FILTERS (NOW CORRECT PLACE) -->
-    <div class="filters">
-      <button onclick="applyFilter('normal')">Normal</button>
-      <button onclick="applyFilter('vintage')">Vintage</button>
-      <button onclick="applyFilter('bw')">B&W</button>
-      <button onclick="applyFilter('warm')">Warm</button>
-      <button onclick="applyFilter('cool')">Cool</button>
-      <button onclick="applyFilter('dramatic')">Dramatic</button>
-      <button onclick="applyFilter('soft')">Soft</button>
-      <button onclick="applyFilter('retro')">Retro</button>
-      <button onclick="applyFilter('cinematic')">Cinema</button>
-      <button onclick="applyFilter('bright')">Bright</button>
-    </div>
+    <!-- FILTER BAR -->
+    <div class="toolbar">
 
-    <!-- CONTROLS -->
-    <div class="controls-wrapper">
+      <div class="filters">
+        <button onclick="applyFilter('normal')">Normal</button>
+        <button onclick="applyFilter('vintage')">Vintage</button>
+        <button onclick="applyFilter('bw')">B&W</button>
+        <button onclick="applyFilter('warm')">Warm</button>
+        <button onclick="applyFilter('cool')">Cool</button>
+        <button onclick="applyFilter('dramatic')">Dramatic</button>
+        <button onclick="applyFilter('bright')">Bright</button>
+      </div>
 
-      <h3>Adjust</h3>
-      <label>Brightness</label>
-      <input type="range" id="brightness" min="0" max="200" value="100">
+      <div class="tool">
+        <label>Brightness</label>
+        <input type="range" id="brightness" min="0" max="200" value="100">
+      </div>
 
-      <label>Contrast</label>
-      <input type="range" id="contrast" min="0" max="200" value="100">
+      <div class="tool">
+        <label>Contrast</label>
+        <input type="range" id="contrast" min="0" max="200" value="100">
+      </div>
 
-      <label>Grayscale</label>
-      <input type="range" id="grayscale" min="0" max="100" value="0">
+      <div class="tool">
+        <label>Grayscale</label>
+        <input type="range" id="grayscale" min="0" max="100" value="0">
+      </div>
 
-      <h3>Transform</h3>
       <button onclick="rotate()">Rotate</button>
       <button onclick="flip()">Flip</button>
-
-      <h3>Text</h3>
-      <input id="textInput" placeholder="Enter text">
-      <button onclick="addText()">Add Text</button>
-
-      <h3>AI Tools</h3>
-      <button onclick="aiEnhance()">✨ AI Enhance</button>
-
-      <button class="download" onclick="download()">⬇ Download</button>
+      <button class="download" onclick="download()">Download</button>
 
     </div>
 
