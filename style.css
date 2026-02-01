@@ -34,7 +34,7 @@ body {
 }
 
 .hero h2 {
-  font-size: 42px;
+  font-size: 40px;
 }
 
 .hero p {
@@ -67,36 +67,66 @@ body {
   justify-content: space-between;
 }
 
-.editor-layout {
+.editor-container {
   display: flex;
-  height: calc(100vh - 50px);
+  flex-direction: column;
 }
 
-.canvas-area {
-  flex: 3;
-  background: #eee;
+.image-wrapper {
+  background: #000;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding: 10px;
 }
 
 canvas {
-  max-width: 100%;
-}
-
-.tools {
-  flex: 1;
-  background: #ffffff;
-  padding: 15px;
-  border-left: 1px solid #ddd;
-}
-
-.tools button {
   width: 100%;
-  margin-top: 15px;
-  padding: 10px;
-  background: #7b3fe4;
+  max-height: 70vh;
+  background: black;
+}
+
+.controls-wrapper {
+  background: #10183a;
+  padding: 12px;
   color: white;
+}
+
+.controls-wrapper input,
+.controls-wrapper button {
+  width: 100%;
+  margin: 6px 0;
+  padding: 10px;
+  border-radius: 6px;
   border: none;
-  border-radius: 8px;
+}
+
+button {
+  background: #18e0ff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0fc1da;
+}
+
+.download {
+  background: #00ff9d;
+  font-weight: bold;
+}
+
+/* DESKTOP */
+@media (min-width: 900px) {
+  .editor-container {
+    flex-direction: row;
+    height: calc(100vh - 50px);
+  }
+
+  .image-wrapper {
+    flex: 3;
+  }
+
+  .controls-wrapper {
+    flex: 1.5;
+    overflow-y: auto;
+  }
 }
